@@ -12,6 +12,11 @@ BOT_NAME = "books"
 SPIDER_MODULES = ["books.spiders"]
 NEWSPIDER_MODULE = "books.spiders"
 
+ITEM_PIPELINES = {
+   'scrapy.exporters.JsonLinesItemExporter': 300,
+}
+FEED_FORMAT = 'jsonlines'
+FEED_URI = 'books.jl'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "books (+http://www.yourdomain.com)"
